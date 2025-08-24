@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing</title>
+    <script src="tailwind/3.4.17/tailwindcdn.css"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="transition-colors duration-300">
+    <nav id="navbar" class="shadow-lg">
+      <ul class="flex space-x-4 font-medium justify-end p-4">
+        <li class="pr-4">About</li>
+        <li class="pr-4">Services</li>
+        <li class="pr-4">Location</li>
+        <li class="pr-4">Contacts</li>
+        <li><img src="assets/img/logo.png" alt="logo" class="h-7" /></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="container mx-auto">
+        <h1 class="text-3xl text-center font-bold mt-60">
+          Welcome to the Landing Page
+        </h1>
+        <div class="flex justify-center">
+          <button
+            id="theme-toggle"
+            class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          >
+            Change Theme
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("bg-gray-800");
+      document.body.classList.toggle("text-white");
+      document.nav.classList.toggle("border-gray-800");
+    });
+  </script>
+</html>
