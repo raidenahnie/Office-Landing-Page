@@ -1,3 +1,50 @@
-.container {
-    background-image: url(https://cdn-res.keymedia.com/cms/images/us/036/0270_637611702565221761.jpg);
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+body {
+  background-image: url(assets/img/back-img-light.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: auto;
+  transition: background-image 0.5s ease-in-out;
+}
+
+body.dark {
+  background-image: url(assets/img/back-img-dark.png);
+  transition: background-image 0.5s ease-in-out;
+  color: white;
+}
+
+#navbar {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background-color 0.5s ease-out;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+body.dark #navbar {
+  background-color: rgba(97, 97, 97, 0.6);
+  transition: background-color 0.5s ease-in-out;}
+
+.menu {
+    position: fixed;
+    top: 2.2rem;
+    left:5rem;
+    font-size: 20px;
+}
+
+.contact {
+    position: fixed;
+    top: 1.6rem;
+    right: 5rem;
+    font-size: 17px;
 }
