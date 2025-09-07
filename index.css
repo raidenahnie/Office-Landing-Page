@@ -1,22 +1,51 @@
-  ::-webkit-scrollbar {
-    display: none;
-  }
+::-webkit-scrollbar {
+  display: none;
+}
 
 body {
-  background-image: url(assets/img/back-img-light.png);
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  color: black;
+  transition: color 0.5s ease-in-out;
+}
+
+/* Two-layer backgrounds for fade effect */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  width: auto;
-  transition: background-image 0.5s ease-in-out;
+  z-index: -1;
+  transition: opacity 0.8s ease-in-out;
 }
 
-body.dark {
-  background-image: url(assets/img/back-img-dark.png);
-  transition: background-image 0.5s ease-in-out;
-  color: white;
+/* Light theme background */
+body::before {
+  background-image: url("assets/img/back-img-light.png");
+  opacity: 1;
 }
 
+/* Dark theme background */
+body::after {
+  background-image: url("assets/img/back-img-dark.png");
+  opacity: 0;
+}
+
+/* When dark mode is active, fade backgrounds */
+body.dark::after {
+  opacity: 1;
+}
+body.dark::before {
+  opacity: 0;
+}
+
+/* Navbar */
 #navbar {
   background-color: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
@@ -26,25 +55,26 @@ body.dark {
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: background-color 0.5s ease-out;
+  transition: background-color 0.8s ease-in-out;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
 }
 
 body.dark #navbar {
-  background-color: rgba(97, 97, 97, 0.6);
-  transition: background-color 0.5s ease-in-out;}
+  background-color: rgba(50, 50, 50, 0.6);
+  transition: ease-in-out 0.8s;
+}
 
 .menu {
-    position: fixed;
-    top: 2.2rem;
-    left:5rem;
-    font-size: 20px;
+  position: fixed;
+  top: 2.2rem;
+  left: 5rem;
+  font-size: 20px;
 }
 
 .contact {
-    position: fixed;
-    top: 1.6rem;
-    right: 5rem;
-    font-size: 17px;
+  position: fixed;
+  top: 1.6rem;
+  right: 5rem;
+  font-size: 17px;
 }
