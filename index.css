@@ -71,3 +71,9 @@ body.dark #navbar {
   font-size: 17px;
   cursor: pointer;
 }
+
+.container h1 {
+  transition: ease-in-out 0.8s;
+  font-family: "Oswald", sans-serif;
+  font-size: 150px;
+}

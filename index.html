@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" type="image/png" href="assets/img/travel-logo.png" />
     <link rel="stylesheet" href="icons/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
   </head>
   <body class="transition-colors duration-300">
     <nav
@@ -32,11 +33,16 @@
     </nav>
     <main>
       <div class="container mx-auto">
+        <h1
+          id="home-title" class="text-4xl text-right text-stone-800 mt-72 pr-24"
+        >EXPLORE</h1>
+    
       </div>
     </main>
   </body>
   <script>
     const themeToggle = document.getElementById("theme-toggle");
+    const title = document.getElementById("home-title");
 
     themeToggle.addEventListener("click", () => {
       // Toggle dark theme
@@ -48,6 +54,9 @@
       themeToggle.classList.toggle("fad");
       themeToggle.classList.toggle("fa-sun");
       themeToggle.classList.toggle("fa-moon-cloud");
+
+      // Toggle container background
+      title.classList.toggle("text-white");
     });
   </script>
 </html>
