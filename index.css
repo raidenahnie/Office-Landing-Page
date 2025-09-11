@@ -45,21 +45,6 @@ body.dark::before {
   opacity: 0;
 }
 
-/* Navbar */
-#navbar {
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  transition: background-color 0.8s ease-in-out;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-}
-
 body.dark #navbar {
   background-color: rgba(50, 50, 50, 0.6);
   transition: ease-in-out 0.8s;
@@ -75,6 +60,14 @@ body.dark #navbar {
 .contact {
   position: fixed;
   top: 1.6rem;
-  right: 5rem;
+  right: 6rem;
   font-size: 17px;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 0;
+  right: -27rem;
+  font-size: 17px;
+  cursor: pointer;
 }

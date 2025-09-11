@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="icons/all.min.css" />
   </head>
   <body class="transition-colors duration-300">
-    <nav id="navbar" class="shadow-lg">
-      <i class="menu far fa-bars"></i> 
+    <nav
+      class="fixed top-4 left-1/2 transform -translate-x-1/2 w-[90%] bg-white/20 backdrop-blur-lg border border-white/30 rounded-full shadow-lg flex items-center justify-between px-6 py-3"
+    >
+      <i class="menu far fa-bars"></i>
       <ul class="options flex space-x-4 font-sm justify-start p-4 ml-40">
         <li class="pr-4">Home</li>
         <li class="pr-4">About</li>
@@ -19,31 +21,33 @@
         <li class="pr-4">Location</li>
         <li class="pr-4">Reviews</li>
         <li class="pr-4">Contacts</li>
+        <button
+          id="theme-toggle"
+          class="fad fa-sun theme-toggle text-slate-50 rounded-full p-2 bg-gray-400 px-4 hover:text-amber-200"
+        ></button>
       </ul>
-      <button class="contact border-2 border-blue-500 text-blue-500 p-2 px-5 hover:bg-blue-500 hover:text-white rounded">Call Us</button>
+      <button
+        class="contact fas fa-phone-rotary bg-green-400 text-white p-2 px-5 rounded-full hover:bg-green-500"
+      ></button>
     </nav>
     <main>
       <div class="container mx-auto">
-        <h1 class="text-3xl text-center font-bold mt-60">
-          Welcome to the Landing Page
-        </h1>
-        <div class="flex justify-center">
-          <button
-            id="theme-toggle"
-            class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          >
-            Change Theme
-          </button>
-        </div>
       </div>
     </main>
   </body>
   <script>
-  const themeToggle = document.getElementById("theme-toggle");
+    const themeToggle = document.getElementById("theme-toggle");
 
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    document.body.classList.toggle("text-white");
-  });
-</script>
+    themeToggle.addEventListener("click", () => {
+      // Toggle dark theme
+      document.body.classList.toggle("dark");
+      document.body.classList.toggle("text-white");
+
+      // Toggle icons
+      themeToggle.classList.toggle("fad");
+      themeToggle.classList.toggle("fad");
+      themeToggle.classList.toggle("fa-sun");
+      themeToggle.classList.toggle("fa-moon-cloud");
+    });
+  </script>
 </html>
